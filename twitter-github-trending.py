@@ -24,23 +24,24 @@ def tweet(relative_link, description):
     organization = relative_link.split('/')[1]
     name = relative_link.split('/')[2]
 
-    # don't tweet more than once every 5 minutes
     link = "http://github.com" + relative_link
 
     if description is None:
         description = ''
 
     description = name + " by " + organization + ": " + description
-    if len(description) > 120:
-        description = description[:116] + '...'    
+    if len(description) >= 116:
+        description = description[:116-4] + '...'
 
 
+    description = description.strip()
     tweet_text = description + " " + link
 
     print "TWEETING: %s" % tweet_text
     api.PostUpdate(tweet_text.strip())
     save(relative_link)
-    time.sleep(60 * 5)
+    # don't tweet more than once every 15 minutes
+    time.sleep(60 * 15)
 
 def save(key):
     dbdict[key] = True
