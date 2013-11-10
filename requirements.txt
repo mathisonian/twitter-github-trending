@@ -1,0 +1,4 @@
+sqlitedict
+python-twitter
+requests
+beautifulsoup4
