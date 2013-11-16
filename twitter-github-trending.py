@@ -69,9 +69,14 @@ def get_trending_repos():
 
 def watch_trending():
     while True:
-        get_trending_repos()
+        try:
+            get_trending_repos()
         
         # check once every hour
+        except Exception, e:
+            print e
+            pass
+
         time.sleep(60 * 60)
 
 
