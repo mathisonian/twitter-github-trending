@@ -1,0 +1,1 @@
+worker: python twitter-github-trending.py
