@@ -1,1 +1,1 @@
-worker: python twitter-github-trending.py
+web: python twitter-github-trending.py
