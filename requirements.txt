@@ -2,3 +2,5 @@ sqlitedict
 python-twitter
 requests
 beautifulsoup4
+Flask
+gunicorn

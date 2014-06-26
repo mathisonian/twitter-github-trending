@@ -13,6 +13,18 @@ api = twitter.Api(consumer_key=os.environ['TWITTER_CONSUMER_KEY'],
                   access_token_secret=os.environ['TWITTER_ACCESS_TOKEN_SECRET'])
 
 
+
+## just make heroku serve something
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello Github Trending!'
+
+
+
 ## Authenticate to twitter
 def tweet(relative_link, description):
     if exists(relative_link):
