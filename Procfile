@@ -1,1 +1,1 @@
-web: gunicorn twitter-github-trending:app
+web: python twitter-github-trending.py
